@@ -142,10 +142,21 @@ WSGI_APPLICATION = 'EducaPlus.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'd5thhnh0nu3isv',
+        # 'NAME': os.path.join(BASE_DIR, 'mydb'),
+        'USER': 'jlddfistmxxmxr',
+        'PASSWORD': 'e409e2949d4de86db5114b1acf5826ec6b35e48be54d87ff4f8efd3f3f02ef6b',
+        'HOST': 'ec2-52-20-78-241.compute-1.amazonaws.com',
+        'PORT': '5432', # 8000 is default
     }
 }
 
@@ -186,7 +197,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
-
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
